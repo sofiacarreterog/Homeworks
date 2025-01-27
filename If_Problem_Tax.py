@@ -16,12 +16,12 @@ try:
         tax_cut = 0.01*children
     else:
         tax_cut = 0.005*children
-    final_tax = (tax_rate-tax_cut)
+    final_tax = max(0,tax_rate-tax_cut)
     net_salary = gross_salary*(1-final_tax)
     print(f"Your net salary is {net_salary}")
 
 except ValueError:
-    print("Please give valid values for salary amd children")
+    print("Please give valid values for salary and children")
 
 
 
