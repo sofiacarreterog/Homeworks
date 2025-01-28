@@ -1,8 +1,19 @@
 try:
     gross_salary = input(f"What is your gross salary? ")
     gross_salary = int(gross_salary)
+    if gross_salary < 0:
+        print(f"Gross Salary cannot be negative. Please enter a valid value.")
+        gross_salary = input(f"What is your gross salary? ")
+        gross_salary = int(gross_salary)
+
+
     children = input(f"How many children do you have? ")
     children = int(children)
+    if children < 0 or children > 20:
+        print(f"Please do not lie to the tax calculator. Please enter the true value: ")
+        children = input(f"How many children do you have? ")
+        children = int(children)
+
     if gross_salary < 1000:
        tax_rate = 0.1
     elif gross_salary < 2000:
